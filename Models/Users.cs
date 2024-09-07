@@ -25,7 +25,6 @@ namespace FoodCart.Models
         public string Role { get; set; }  //Customer /Admin/ HotelManager
 
         //Navigation Property
-
         public ICollection<Orders> Orders { get; set; } = new List<Orders>();
         public ICollection<Cart> Carts { get; set; } = new List<Cart>();
         public ICollection<Notification> Notifications { get; set; } = new List<Notification>();

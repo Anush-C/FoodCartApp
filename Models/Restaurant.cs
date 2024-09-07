@@ -21,16 +21,18 @@ namespace FoodCart.Models
         [Required]
         [EmailAddress]
         [StringLength(100)]
-        public string RestaurantEmail { get; set; }
+        public string? RestaurantEmail { get; set; }
 
         [Required, StringLength(255)]
-        public string RestaurantAddress { get; set; }
+        public string? RestaurantAddress { get; set; }
 
         [Required]
         public TimeSpan OpeningHours { get; set; }
 
         [Required]
         public TimeSpan ClosingHours { get; set; }
+
+        
 
 
         //Navigation Property

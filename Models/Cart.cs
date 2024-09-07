@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FoodCart.Models
 {
@@ -15,12 +17,13 @@ namespace FoodCart.Models
 
         [Required]
         [StringLength(255)]
-        public string DelieveryAddress { get; set; }
+        public string DeliveryAddress { get; set; }
 
         [Required]
         [Range(0.01, 10000.00, ErrorMessage = "Total Cost must be a positive value.")]
         [Column(TypeName = "decimal(18, 2)")]
         public decimal TotalCost { get; set; }
+
         [Required]
         public DateTime CreatedAt { get; set; }
 
@@ -30,8 +33,10 @@ namespace FoodCart.Models
         public int ItemID { get; set; }
         public int UserID { get; set; }
 
+       
         public MenuItems? MenuItems { get; set; }
-        public Users? Users { get; set; }
 
+        [JsonIgnore] // Exclude from JSON serialization
+        public Users? Users { get; set; }
     }
 }

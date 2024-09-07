@@ -62,7 +62,7 @@ namespace FoodCart.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DelieveryAddress")
+                    b.Property<string>("DeliveryAddress")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");

@@ -25,6 +25,8 @@ namespace FoodCart.Data
         public DbSet<UpiPayment> UpiPayment { get; set; }
         public DbSet<CardPayment> CardPayment { get; set; }
 
+       
+
 
 
 

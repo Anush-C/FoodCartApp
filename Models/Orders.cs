@@ -17,6 +17,7 @@ namespace FoodCart.Models
         public string ShippingAddress { get; set; }
         [Required]
         [StringLength(50)]
+        [RegularExpression(@"^(Pending|Completed|Cancelled)$", ErrorMessage = "Invalid order status")]
         public string OrderStatus { get; set; }
         [Required]
         public DateTime OrderTime { get; set; }
